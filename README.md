@@ -16,7 +16,7 @@ La página `index.html` muestra cada informe en una pestaña, con el más recien
 - `index.html`: la aplicación completa. Los datos de cada informe están en el arreglo `INFORMES`, al comienzo del script.
 - `media/AAAA-MM/`: fotos del período (`foto-NN.jpg` y su miniatura `foto-NN-mini.jpg`), curva S (`curvaS.jpg`) y foto de portada (`hero.jpg`).
 - `media/marca/`: logos de GIP.
-- `pdf/`: informe del período en PDF, generado desde la planilla Excel.
+- `pdf/`: informe del período en PDF A4, impreso desde la misma página con pie de página numerado (mismo formato que Torre 1).
 
 ## Agregar un mes nuevo
 
