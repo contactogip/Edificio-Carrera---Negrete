@@ -396,6 +396,7 @@ footer.foot strong{color:var(--ink)}
 
 /* Hitos sin fecha y hechos del mes */
 .tl-list li.pend::before{border-style:dashed}
+.tl-dot.ok,.tl-list li.ok::before{background:var(--brand);border-color:var(--brand);color:var(--bg)}
 ol.hechos{list-style:none;margin:1.25rem 0 0;padding:0;counter-reset:hh;border-top:1px solid var(--line);max-width:80ch}
 ol.hechos li{display:grid;grid-template-columns:1.6rem auto minmax(0,1fr);gap:.75rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line-2);font-size:var(--fs-sm);counter-increment:hh}
 ol.hechos li::before{content:counter(hh);width:1.15rem;height:1.15rem;border-radius:50%;border:1.5px solid var(--brand);color:var(--brand);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;align-self:center}
@@ -559,11 +560,11 @@ const INFORMES = [
   ],
   seguridad:{ accidentesMes:1, diasPerdidosMes:7, accidentesAcum:2, diasPerdidosAcum:7,
     texto:"El 08-09 se accidenta un carpintero mientras desarmaba un andamio, con 7 días perdidos. A la fecha la obra registra dos accidentes y 7 días perdidos." },
-  hitosNota:"Todos los hitos con fecha comprometida quedaron antes del cierre, y el informe no registra si el término de obra gruesa (16-09-2026) se cumplió. La recepción provisoria aún no tiene fecha informada por la constructora.",
+  hitosNota:"La obra gruesa terminó el 23-04-2026, 146 días antes de la fecha comprometida (16-09-2026). La recepción provisoria aún no tiene fecha informada por la constructora.",
   hitosContrato:[
     { nombre:"Sello de excavación", fecha:"29-05-2025" },
     { nombre:"Llegada a cota 0", fecha:"02-02-2026" },
-    { nombre:"Término de obra gruesa", fecha:"16-09-2026" },
+    { nombre:"Término de obra gruesa", fecha:"16-09-2026", real:"23-04-2026" },
     { nombre:"Término de departamento piloto", fecha:"29-05-2026", nota:"Acordado en reunión de obras" },
     { nombre:"Recepción provisoria", fecha:null, nota:"Pendiente que la constructora indique la fecha" }
   ],
@@ -578,7 +579,7 @@ const INFORMES = [
     { ambito:"Avance físico vs programa", estado:"verde", lectura:"Ejecutado 72,5% vs programado 71,6% (+0,87 pp, 5 días de adelanto)", ir:"avance" },
     { ambito:"Avance certificado en EEPP vs físico", estado:"verde", lectura:"Certificado en estados de pago 73,9% vs avance físico 72,5% (+1,45 pp)", ir:"financiero" },
     { ambito:"Consumo de plazo", estado:"amarillo", lectura:"Plazo transcurrido 79,3% con avance físico 72,5% (0,91x), con el aumento de 22 días incluido", ir:"avance" },
-    { ambito:"Hitos contractuales", estado:"amarillo", lectura:"El informe no registra el cumplimiento del término de obra gruesa (16-09-2026); recepción provisoria sin fecha informada por la constructora", ir:"hitos" },
+    { ambito:"Hitos contractuales", estado:"amarillo", lectura:"Obra gruesa terminada el 23-04-2026, 146 días antes de lo comprometido; recepción provisoria sin fecha informada por la constructora", ir:"hitos" },
     { ambito:"Vigencia de garantías", estado:"amarillo", lectura:"Boletas de anticipo (22-01-2027) y de fiel cumplimiento (19-02-2027) vencen antes del nuevo término, 05-03-2027", ir:"contrato" },
     { ambito:"Obras adicionales", estado:"verde", lectura:"Aprobados UF 2.338,77 netos (0,72% del contrato neto); saldo por pagar UF 233,62", ir:"adicionales" },
     { ambito:"Cierre de RDI", estado:"verde", lectura:"Tasa de cierre 96,0%, con 13 pendientes de 324", ir:"rdi" },
@@ -679,7 +680,7 @@ const INFORMES = [
   },
   rdi:{ total:303, resueltas:296, pendientes:7, nulas:0 },
   calidadResumen:"Durante el mes se revisaron pintura de fachada, trazados de tabiquería y terrazas, y se recibieron en R0 los departamentos del piso 2. No se registran accidentes durante el mes.",
-  hitosNota:"El próximo hito contractual es el término de obra gruesa, programado para el 16-09-2026. La recepción provisoria aún no tiene fecha informada por la constructora.",
+  hitosNota:"La obra gruesa terminó el 23-04-2026, 146 días antes de la fecha comprometida (16-09-2026). La recepción provisoria aún no tiene fecha informada por la constructora.",
   calidad:[
     "Se revisan los trabajos de pintura de la fachada interior.",
     "Se verifican los trazados de tabiquería del piso 12.",
@@ -690,7 +691,7 @@ const INFORMES = [
   hitosContrato:[
     { nombre:"Sello de excavación", fecha:"29-05-2025" },
     { nombre:"Llegada a cota 0", fecha:"02-02-2026" },
-    { nombre:"Término de obra gruesa", fecha:"16-09-2026" },
+    { nombre:"Término de obra gruesa", fecha:"16-09-2026", real:"23-04-2026" },
     { nombre:"Término de departamento piloto", fecha:"29-05-2026", nota:"Acordado en reunión de obras" },
     { nombre:"Recepción provisoria", fecha:null, nota:"Pendiente que la constructora indique la fecha" }
   ],
@@ -709,7 +710,7 @@ const INFORMES = [
     { ambito:"Avance físico vs programa", estado:"verde", lectura:"Ejecutado 67,6% vs programado 66,7% (+0,95 pp, 5 días de adelanto)", ir:"avance" },
     { ambito:"Avance certificado en EEPP vs físico", estado:"verde", lectura:"Certificado en estados de pago 68,3% vs avance físico 67,6% (+0,64 pp)", ir:"financiero" },
     { ambito:"Consumo de plazo", estado:"amarillo", lectura:"Plazo transcurrido 77,5% con avance físico 67,6% (0,87x)", ir:"avance" },
-    { ambito:"Hitos contractuales", estado:"amarillo", lectura:"Término de obra gruesa programado al 16-09-2026; recepción provisoria sin fecha informada por la constructora", ir:"hitos" },
+    { ambito:"Hitos contractuales", estado:"amarillo", lectura:"Obra gruesa terminada el 23-04-2026, 146 días antes de lo comprometido; recepción provisoria sin fecha informada por la constructora", ir:"hitos" },
     { ambito:"Obras adicionales", estado:"verde", lectura:"Aprobados UF 2.338,77 netos (0,72% del contrato neto); saldo por pagar UF 404,65", ir:"adicionales" },
     { ambito:"Cierre de RDI", estado:"verde", lectura:"Tasa de cierre 97,7%, con 7 pendientes de 303", ir:"rdi" },
     { ambito:"Seguridad", estado:"verde", lectura:"Sin accidentes registrados durante agosto", ir:"calidad" }
@@ -1095,10 +1096,13 @@ function vHitos(R){
   const H = R.hitosContrato, P = R.proyecto;
   const ini = toDate(P.inicio), fin = toDate(P.termino), hoy = toDate(R.cierre);
   const pos = d => ((d - ini) / (fin - ini)) * 100, xHoy = pos(hoy);
-  const fechados = H.map((h,i)=>({...h, i})).filter(h=>h.fecha).sort((a,b)=>toDate(a.fecha)-toDate(b.fecha));
+  const ok = h => !!h.real && toDate(h.real) <= hoy;
+  const cuando = h => ok(h) ? h.real : h.fecha;
+  const dif = h => { const d = Math.round((toDate(h.fecha) - toDate(h.real)) / 864e5); return d>0 ? `${d} días antes de lo comprometido` : d<0 ? `${-d} días después de lo comprometido` : "en la fecha comprometida"; };
+  const fechados = H.map((h,i)=>({...h, i})).filter(h=>cuando(h)).sort((a,b)=>toDate(cuando(a))-toDate(cuando(b)));
   let prev = -99, lift = false;
-  const dots = fechados.map(h=>{ const d = toDate(h.fecha), x = pos(d); lift = (x - prev < 3.5) ? !lift : false; prev = x;
-    return `<div class="tl-dot ${d<=hoy?"past":""} ${lift?"up":""}" style="left:${x}%" title="${h.nombre}, ${h.fecha}">${h.i+1}</div>`; }).join("");
+  const dots = fechados.map(h=>{ const d = toDate(cuando(h)), x = pos(d); lift = (x - prev < 3.5) ? !lift : false; prev = x;
+    return `<div class="tl-dot ${ok(h)?"ok":d<=hoy?"past":""} ${lift?"up":""}" style="left:${x}%" title="${h.nombre}, ${ok(h)?`terminado el ${h.real} (comprometido ${h.fecha})`:h.fecha}">${h.i+1}</div>`; }).join("");
   const [, mm, yy] = R.cierre.split("-"), diasMes = new Date(+yy, +mm, 0).getDate();
   let pd = -1, up = false;
   const mdots = R.hechos.map((h,i)=>{ up = h.dia===pd ? !up : false; pd = h.dia; return `<div class="tl-dot past ${up?"up":""}" style="left:${(h.dia-1)/(diasMes-1)*100}%" title="${String(h.dia).padStart(2,"0")}-${mm}: ${h.texto}">${i+1}</div>`; }).join("");
@@ -1112,8 +1116,8 @@ function vHitos(R){
       </div>
       <div class="tl-ends"><span>Inicio ${P.inicio}</span><span>Término ${P.termino}</span></div>
     </div>
-    <ol class="tl-list">${H.map(h=>`<li class="${h.fecha&&toDate(h.fecha)<=hoy?"past":""} ${h.fecha?"":"pend"}">${h.nombre}<small>${h.fecha||"Sin fecha"}${h.nota?` · ${h.nota}`:""}</small></li>`).join("")}</ol>
-    <p class="src">Los hitos en azul tienen fecha comprometida anterior al cierre del período. El informe no registra la fecha real de cumplimiento.</p>
+    <ol class="tl-list">${H.map(h=>`<li class="${ok(h)?"ok":h.fecha&&toDate(h.fecha)<=hoy?"past":""} ${h.fecha?"":"pend"}">${h.nombre}<small>${ok(h)?`Terminado el ${h.real}, ${dif(h)} (${h.fecha})`:h.fecha||"Sin fecha"}${h.nota?` · ${h.nota}`:""}</small></li>`).join("")}</ol>
+    <p class="src">Los hitos rellenos están cumplidos y se ubican en su fecha real. Los hitos en azul tienen fecha comprometida anterior al cierre del período, sin fecha real registrada en el informe.</p>
 
     <h3>Hechos relevantes de ${R.periodo.toLowerCase()}</h3>
     <div class="tl" aria-hidden="true">
